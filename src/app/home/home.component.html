@@ -1,11 +1,11 @@
 <main class="main-container">
     <h1><span>{{ title }}</span></h1>
-    <h2>Publié par la {{publisher}}</h2>
+    <p>Publié par la {{publisher}}</p>
     <div class="container-keywords">
         <span class="keyword" *ngFor="let keyword of keywords">{{ keyword }}</span>
     </div>
     <form class="search-bar">
-        <input  (input)="showAll($event)" name="search" required [(ngModel)]="searchText" #myModel="ngModel" type="text" placeholder="Rechercher ...">
+        <input  (input)="showAll($event)" name="search" required [(ngModel)]="searchText" #myModel="ngModel" type="text" placeholder="Rechercher ..."><i class="fas fa-search"></i>
     </form>
     <table>
         <thead>

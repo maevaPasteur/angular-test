@@ -61,16 +61,25 @@ body {
 .search-bar {
   border: solid 2px rgba(0,0,0,.1);
   border-radius: 3px;
-  width: 300px;
+  width: 200px;
   height: 32px;
   line-height: 32px;
-  margin: 15px 0;
+  margin: 15px 0 15px auto;
+  position: relative;
 
   input {
     height: 100%;
     width: calc(100% - 30px);
     background: none;
     padding: 0 15px;
+  }
+
+  i {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    pointer-events: none;
+    color: #00aa91;
   }
 }
 
