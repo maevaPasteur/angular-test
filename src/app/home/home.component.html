@@ -1,0 +1,42 @@
+<main class="main-container">
+    <h1><span>{{ title }}</span></h1>
+    <h2>Publié par la {{publisher}}</h2>
+    <div class="container-keywords">
+        <span class="keyword" *ngFor="let keyword of keywords">{{ keyword }}</span>
+    </div>
+    <form class="search-bar">
+        <input  (input)="showAll($event)" name="search" required [(ngModel)]="searchText" #myModel="ngModel" type="text" placeholder="Rechercher le commerce...">
+    </form>
+    <table>
+        <thead>
+        <tr>
+            <th>Commerce</th>
+            <th>Ville</th>
+            <th>Code postal</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let record of records | filter : searchText">
+            <td>{{ record.fields.tco_libelle }}</td>
+            <td>{{ record.fields.ville }}</td>
+            <td>{{ record.fields.code_postal }}</td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="container-action">
+        <span (click)="changePage('first')">First</span>
+        <span (click)="changePage('prev')">Prev</span>
+        <span class="select-page">
+        <form>
+            <select name="page" size="1" (click)="changePage('goTo',$event.target.value)">
+                <option *ngFor="let dummy of ' '.repeat(numberPage+1).split(''), let page = index">
+                    <span *ngIf="page !== 0">{{ page }}</span>
+                    <span *ngIf="page === 0">{{ start }}</span>
+                </option>
+            </select>
+        </form>
+        </span>
+        <span (click)="changePage('next')">Next</span>
+        <span (click)="changePage('last')">Last</span>
+    </div>
+</main>
