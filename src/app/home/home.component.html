@@ -24,8 +24,8 @@
         </tbody>
     </table>
     <div class="container-action">
-        <span (click)="changePage('first')">First</span>
-        <span (click)="changePage('prev')">Prev</span>
+        <span *ngIf="start !== 1"  (click)="changePage('first')">First</span>
+        <span *ngIf="start !== 1"  (click)="changePage('prev')">Prev</span>
         <span class="select-page">
         <form>
             <select name="page" size="1" (click)="changePage('goTo',$event.target.value)">
@@ -36,7 +36,7 @@
             </select>
         </form>
         </span>
-        <span (click)="changePage('next')">Next</span>
-        <span (click)="changePage('last')">Last</span>
+        <span *ngIf="start !== numberPage" (click)="changePage('next')">Next</span>
+        <span *ngIf="start !== numberPage"  (click)="changePage('last')">Last</span>
     </div>
 </main>
