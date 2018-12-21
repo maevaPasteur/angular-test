@@ -83,7 +83,7 @@ export class HomeComponent implements OnInit {
         }else if(x === 'all'){
             var link = "https://data.ratp.fr/api/records/1.0/search/?dataset=liste-des-commerces-de-proximite-agrees-ratp&rows=" + this.length +"&start=" + this.start + "&sort=code_postal&facet=tco_libelle&facet=code_postal&facet=ville";
         }else if(x === 'inverse'){
-            var link = "https://data.ratp.fr/api/records/1.0/search/?dataset=liste-des-commerces-de-proximite-agrees-ratp&rows=" + this.length +"&start=" + this.start + "&sort=-code_postal&facet=tco_libelle&facet=code_postal&facet=ville";
+            var link = "https://data.ratp.fr/api/records/1.0/search/?dataset=liste-des-commerces-de-proximite-agrees-ratp&rows=" + this.show +"&start=" + this.start + "&sort=-code_postal&facet=tco_libelle&facet=code_postal&facet=ville";
         }else  {
             var link = "https://data.ratp.fr/api/records/1.0/search/?dataset=liste-des-commerces-de-proximite-agrees-ratp&rows=" + this.show +"&start=" + this.start + "&sort=code_postal&facet=tco_libelle&facet=code_postal&facet=ville";
         }
