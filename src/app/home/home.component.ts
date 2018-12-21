@@ -30,6 +30,10 @@ export class HomeComponent implements OnInit {
     show: any;
     numberPage: any;
 
+    cleanString(value) {
+        value = value.replace(/-/g, ' ');
+        return value.toLowerCase();
+    }
 
     changePage(state, page) {
         switch (state) {

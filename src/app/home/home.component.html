@@ -18,7 +18,7 @@
         <tbody>
         <tr *ngFor="let record of records | filter : searchText">
             <td>{{ record.fields.tco_libelle }}</td>
-            <td>{{ record.fields.ville }}</td>
+            <td class="ville-name">{{ cleanString(record.fields.ville) }}</td>
             <td>{{ record.fields.code_postal }}</td>
         </tr>
         </tbody>
