@@ -26,3 +26,15 @@ td {
   border: solid 2px rgba(0, 0, 0, 0.1);
   border-radius: 3px;
 }
+
+.code-postal {
+  span {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  span i {
+    display: block;
+    margin-left: 15px;
+    cursor: pointer;
+  }
+}

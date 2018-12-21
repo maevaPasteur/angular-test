@@ -8,7 +8,7 @@ export class FilterPipe implements PipeTransform {
         if(!searchText) return items;
         searchText = searchText.toLowerCase();
         return items.filter( it => {
-            return it.fields.tco_libelle.toLowerCase().includes(searchText);
+            return it.fields.tco_libelle.toLowerCase().includes(searchText) + it.fields.ville.toLowerCase().includes(searchText) + it.fields.code_postal.toString().toLowerCase().includes(searchText);
         });
     }
 }

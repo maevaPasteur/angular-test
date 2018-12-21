@@ -5,14 +5,14 @@
         <span class="keyword" *ngFor="let keyword of keywords">{{ keyword }}</span>
     </div>
     <form class="search-bar">
-        <input  (input)="showAll($event)" name="search" required [(ngModel)]="searchText" #myModel="ngModel" type="text" placeholder="Rechercher le commerce...">
+        <input  (input)="showAll($event)" name="search" required [(ngModel)]="searchText" #myModel="ngModel" type="text" placeholder="Rechercher ...">
     </form>
     <table>
         <thead>
         <tr>
             <th>Commerce</th>
             <th>Ville</th>
-            <th>Code postal</th>
+            <th class="code-postal"><span>Code postal</span><span><i (click)="updatePage('inverse')" class="fas fa-caret-up"></i><i class="fas fa-caret-down"  (click)="updatePage(0)"></i></span></th>
         </tr>
         </thead>
         <tbody>
